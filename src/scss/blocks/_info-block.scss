@@ -1,0 +1,141 @@
+.info {
+    padding: 24px 0;
+}
+
+// header 
+.info__header {
+    padding: 0 16px;
+
+    &>* {
+        margin-bottom: 24px;
+    }
+}
+
+.info__title {
+    color: $textDark;
+    font-family: $bold;
+    font-size: 28px;
+    line-height: 142%;
+    letter-spacing: -0.6px;
+}
+
+.info__title--before {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -16px;
+        width: 4px;
+        height: 40px;
+        background-color: #41F6D7;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}
+
+.info__title-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info__buttons[hidden] {
+    display: flex;
+}
+
+.info__buttons {
+    display: flex;
+}
+
+.info__button-text {
+    margin-right: 9px;
+    color: $textDark;
+    font-family: $medium;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
+.info__button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info__button--margin-left {
+    margin-left: 32px;
+}
+
+.info__slider {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.info__link {
+    display: block;
+    padding: 8px 16px;
+    margin: 3px 0;
+    border-radius: 6px;
+    font-family: $regular;
+    color: $textLight;
+    white-space: nowrap;
+    margin-right: 12px;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+    border: 2px solid transparent;
+
+    &:hover {
+        color: $lightHover;
+    }
+
+    &:focus {
+        outline: 1px solid $textLight;
+        outline-offset: -1px;
+    }
+
+    &--active {
+        background-color: #fff;
+        border: 2px solid #B8FFEC;
+    }
+}
+
+// article 
+.info__text-wrapper {
+    padding: 0 16px;
+    flex: 0 0 50%;
+}
+
+.info__text {
+    max-height: 160px;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+
+    &--visible {
+        max-height: none !important;
+        overflow-y: visible;
+    }
+}
+
+.info__par {
+    color: $textDark;
+    font-family: $regular;
+    font-size: 14px;
+    line-height: 128%;
+    letter-spacing: 0.2px;
+}
+
+.info__par:not(:last-child) {
+    margin-bottom: 18px;
+}
+
+.info__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,38 @@
+.brands__container {
+    padding: 16px;
+}
+
+.brands__list {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    column-gap: 30px;
+    row-gap: 16px;
+    max-height: 160px;
+    overflow-y: hidden;
+
+    &--visible {
+        max-height: none;
+    }
+}
+
+.brands__item {
+    height: 72px;
+    border: 1px solid $lightBorder;
+    border-radius: 6px;
+    position: relative;
+}
+
+.brands__logo {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.brands__btn {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+}

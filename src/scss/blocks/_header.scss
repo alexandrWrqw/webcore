@@ -1,0 +1,33 @@
+.header[hidden] {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 16px;
+    border-bottom: 1px solid #D9FFF5;
+}
+
+.header__item--line {
+    position: relative;
+    margin-left: 15px;
+    padding-left: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 2px;
+        height: 32px;
+        border-radius: 1px;
+        background-color: $lightBorder;
+    }
+}
+
+.header__item--margin-left {
+    margin-left: 16px;
+}
