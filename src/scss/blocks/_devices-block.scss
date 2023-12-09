@@ -1,39 +1,41 @@
-.brands__container {
+.devices__container {
     padding: 16px;
 }
 
-.brands__list {
+.devices__list {
     display: grid;
-    box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     column-gap: 30px;
     row-gap: 16px;
     max-height: 160px;
     overflow-y: hidden;
+    box-sizing: border-box;
 
     &--visible {
         max-height: none;
     }
 }
 
-.brands__item {
-    height: 72px;
+.devices__item {
+    height: 160px;
+    padding: 16px;
     border: 1px solid $lightBorder;
     border-radius: 6px;
-    position: relative;
     background-color: white;
+    position: relative;
 }
 
-.brands__logo {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+.devices__card-title {
+    color: $textDark;
+    font-family: $medium;
+    line-height: 150%;
+    letter-spacing: -0.2px;
 }
 
-.brands__btn {
+.devices__btn {
     position: absolute;
-    top: 50%;
-    right: 16px;
-    transform: translateY(-50%);
+    bottom: 0;
+    right: 0;
+    margin-right: 16px;
+    margin-bottom: 16px;
 }

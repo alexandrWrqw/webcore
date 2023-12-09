@@ -14,11 +14,6 @@
         overflow-y: visible;
     }
 
-    .swiper {
-        width: 100%;
-        height: 112px;
-    }
-
     .btn-show {
         display: none;
     }
@@ -31,6 +26,8 @@
 
     .slider-brands {
         position: relative;
+        width: 100%;
+        height: 112px;
 
         &::after {
             content: '';
@@ -39,6 +36,33 @@
             top: 0;
             width: 24px;
             height: 72px;
+            background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.00) 100%);
+            z-index: 2;
+        }
+    }
+}
+
+// SWIPER devices-block
+@media screen and (max-width: $swiperAdd) {
+    .devices__list {
+        display: flex;
+        column-gap: 0;
+        row-gap: 0;
+        overflow-y: visible;
+    }
+
+    .slider-devices {
+        position: relative;
+        width: 100%;
+        height: 200px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 160px;
             background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.00) 100%);
             z-index: 2;
         }
