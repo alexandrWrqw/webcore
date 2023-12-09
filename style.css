@@ -437,7 +437,8 @@ main {
   height: 72px;
   border: 1px solid #EAEAEA;
   border-radius: 6px;
-  position: relative; }
+  position: relative;
+  background-color: white; }
 
 .brands__logo {
   position: absolute;
@@ -451,6 +452,42 @@ main {
   right: 16px;
   transform: translateY(-50%); }
 
+.devices__container {
+  padding: 16px; }
+
+.devices__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 16px;
+  max-height: 160px;
+  overflow-y: hidden;
+  box-sizing: border-box; }
+  .devices__list--visible {
+    max-height: none; }
+
+.devices__item {
+  height: 160px;
+  padding: 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  background-color: white;
+  position: relative; }
+
+.devices__card-title {
+  color: #1B1C21;
+  font-family: "TTLakes Medium";
+  line-height: 150%;
+  letter-spacing: -0.2px; }
+
+.devices__btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 16px;
+  margin-bottom: 16px; }
+
 @media screen and (min-width: 320px) {
   .container {
     max-width: 767px; } }
@@ -462,9 +499,6 @@ main {
          column-gap: 0;
     row-gap: 0;
     overflow-y: visible; }
-  .swiper {
-    width: 100%;
-    height: 112px; }
   .btn-show {
     display: none; }
   .swiper-pagination-bullet {
@@ -472,7 +506,9 @@ main {
     height: 12px;
     background-color: #B5B6BC; }
   .slider-brands {
-    position: relative; }
+    position: relative;
+    width: 100%;
+    height: 112px; }
     .slider-brands::after {
       content: '';
       position: absolute;
@@ -480,6 +516,27 @@ main {
       top: 0;
       width: 24px;
       height: 72px;
+      background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0) 100%);
+      z-index: 2; } }
+
+@media screen and (max-width: 580px) {
+  .devices__list {
+    display: flex;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 0;
+    overflow-y: visible; }
+  .slider-devices {
+    position: relative;
+    width: 100%;
+    height: 200px; }
+    .slider-devices::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 160px;
       background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0) 100%);
       z-index: 2; } }
 
