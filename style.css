@@ -103,6 +103,34 @@ main {
     .btn--arrow:focus {
       outline: 2px solid #FF3E79;
       outline-offset: 1px; }
+  .btn--text-style {
+    color: white;
+    font-family: "TTLakes Bold";
+    font-size: 12px;
+    line-height: 200%;
+    letter-spacing: -0.15px;
+    text-transform: uppercase; }
+  .btn--order {
+    padding: 4px 40px 4px 12px;
+    background-color: #FF3E79;
+    border-radius: 16px;
+    position: relative;
+    height: -moz-max-content;
+    height: max-content;
+    align-self: flex-end; }
+    .btn--order::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      border-right: 3px solid white;
+      border-top: 3px solid white;
+      width: 8px;
+      height: 8px;
+      transform: translate(-65%, -50%) rotate(45deg);
+      border-radius: 2px; }
+    .btn--order:hover {
+      background-color: #9f2348; }
   .btn--burger-icon {
     background: #FF3E79 url(./static/burger.svg) no-repeat 50% 50%; }
   .btn--repair-icon {
@@ -488,6 +516,53 @@ main {
   margin-right: 16px;
   margin-bottom: 16px; }
 
+.prices__container {
+  padding: 8px; }
+
+.prices__list {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: white;
+  padding: 0 24px; }
+
+.prices__item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 16px 0; }
+  .prices__item:not(:last-child) {
+    border-bottom: 1px solid #EAEAEA; }
+
+.prices__info {
+  display: flex;
+  align-items: center; }
+
+.prices__title {
+  color: #7E7E82;
+  font-size: 14px;
+  font-family: "TTLakes Medium";
+  line-height: 114%;
+  opacity: 0.7; }
+  .prices__title--inside {
+    margin-bottom: 4px;
+    display: none; }
+  .prices__title--outside {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 16px 24px; }
+
+.prices__desc {
+  color: #1B1C21;
+  font-size: 14px;
+  font-family: "TTLakes Regular";
+  line-height: 128%;
+  letter-spacing: 0.2px; }
+
+.prices__row {
+  display: flex;
+  justify-content: space-between; }
+
 @media screen and (min-width: 320px) {
   .container {
     max-width: 767px; } }
@@ -540,6 +615,42 @@ main {
       background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0) 100%);
       z-index: 2; } }
 
+@media screen and (max-width: 580px) {
+  .prices__list {
+    flex-direction: unset;
+    background-color: unset;
+    padding: unset; }
+  .prices__item {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 6px;
+    padding: 16px; }
+    .prices__item:not(:last-child) {
+      border-bottom: unset; }
+  .prices__info {
+    display: unset;
+    align-items: unset; }
+  .prices__title--inside {
+    display: block; }
+  .prices__title--outside {
+    display: none; }
+  .slider-prices {
+    position: relative;
+    width: 100%;
+    height: 240px; }
+    .slider-prices::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 200px;
+      background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0) 100%);
+      z-index: 2; } }
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 1119px; } }
@@ -552,7 +663,9 @@ main {
   .info__text {
     min-width: 312px; }
   .info__par {
-    line-height: 142%; } }
+    line-height: 142%; }
+  .prices__container {
+    padding: 16px; } }
 
 @media screen and (max-width: 768px) {
   .header__buttons-contact,
@@ -579,7 +692,9 @@ main {
   .sidebar__logo--margin-left {
     margin-left: 0; }
   .info__slider {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  .prices__container {
+    padding: 24px; } }
 
 @media screen and (max-width: 1120px) {
   .header[hidden] {
@@ -592,6 +707,11 @@ main {
     margin: 16px 0 16px 0; }
   .sidebar__header {
     margin-bottom: 20px; } }
+
+@media screen and (max-width: 930px) {
+  .prices__item,
+  .prices__title--outside {
+    grid-template-columns: repeat(3, 1fr); } }
 
 
 /*# sourceMappingURL=style.css.map*/
