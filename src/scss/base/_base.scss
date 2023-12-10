@@ -145,6 +145,42 @@ main {
         }
     }
 
+    &--text-style {
+        color: white;
+        font-family: $bold;
+        font-size: 12px;
+        line-height: 200%;
+        letter-spacing: -0.15px;
+        text-transform: uppercase;
+    }
+
+    &--order {
+        padding: 4px 40px 4px 12px;
+        background-color: $btn;
+        border-radius: 16px;
+        position: relative;
+        
+        height: max-content;
+        align-self: flex-end;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            border-right: 3px solid white;
+            border-top: 3px solid white;
+            width: 8px;
+            height: 8px;
+            transform: translate(-65%, -50%) rotate(45deg);
+            border-radius: 2px;
+        }
+
+        &:hover {
+            background-color: $btnHover;
+        }
+    }
+    
     &--burger-icon {
         background: $btn url('./../img/icons/burger.svg') no-repeat 50% 50%;
     }

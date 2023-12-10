@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             },
             autoplay: {
-                delay: 1500
+                delay: 3000
             }
         }
     );
@@ -80,7 +80,42 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             },
             autoplay: {
-                delay: 1500
+                delay: 3000
+            }
+        }
+    )
+
+    resizeSwiper(
+        '(max-width: 580px)',
+        '.slider-prices', // отдельный класс для этого свайпера
+        {
+            direction: 'horizontal',
+            loop: false,
+            spaceBetween: 16,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.2
+                },
+                360: {
+                    slidesPerView: 1.3
+                },
+                420: {
+                    slidesPerView: 1.5
+                },
+                480: {
+                    slidesPerView: 1.7
+                },
+                530: {
+                    slidesPerView: 2
+                }
+            },
+            autoplay: {
+                delay: 3000
             }
         }
     )
