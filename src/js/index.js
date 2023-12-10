@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 delay: 3000
             }
         }
-    );
+    )
 
     resizeSwiper(
         '(max-width: 580px)',
@@ -146,13 +146,35 @@ brandsShowBtn.addEventListener('click', function () {
 })
 
 // devices block show btn
-const devicesContainer = document.querySelector('.devices__container');
-const devicesList = devicesContainer.querySelector('.devices__list');
-const devicesShowBtn = devicesContainer.querySelector('.btn-show');
+const devicesContainer = document.querySelector('.devices__container')
+const devicesList = devicesContainer.querySelector('.devices__list')
+const devicesShowBtn = devicesContainer.querySelector('.btn-show')
 
 devicesShowBtn.addEventListener('click', function () {
     this.classList.toggle('btn--more--active')
     devicesList.classList.toggle('devices__list--visible')
     this.textContent =
         this.textContent === 'Показать все' ? 'Скрыть' : 'Показать все'
+})
+
+// menu burger btn 
+const sidebarMenu = document.querySelector('.sidebar')
+const menuOpenBtn = document.querySelector('.header__menu-btn')
+const menuCloseBtn = document.querySelector('.sidebar__close-btn')
+const mainBlock = document.querySelector('main')
+const body = document.querySelector('body')
+const headerBlock = document.querySelector('.header')
+
+menuOpenBtn.addEventListener('click', function () {
+    sidebarMenu.classList.add('sidebar--active')
+    mainBlock.classList.add('locked')
+    headerBlock.classList.add('locked')
+    body.classList.add('no-scroll')
+})
+
+menuCloseBtn.addEventListener('click', function () {
+    sidebarMenu.classList.remove('sidebar--active')
+    mainBlock.classList.remove('locked')
+    headerBlock.classList.remove('locked')
+    body.classList.remove('no-scroll')
 })
