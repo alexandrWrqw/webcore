@@ -52,6 +52,15 @@ main {
     margin: 0 auto;
 }
 
+.locked {
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
 // resets 
 .title-reset,
 .par-reset {
@@ -145,7 +154,7 @@ main {
         text-transform: uppercase;
     }
 
-    &--order {
+    &--do {
         padding: 4px 40px 4px 12px;
         background-color: $btn;
         border-radius: 16px;
@@ -233,27 +242,35 @@ main {
     }
 }
 
-.h2-title {
+.main-title {
     color: $textDark;
     font-family: $bold;
     font-size: 28px;
     line-height: 142%;
     letter-spacing: -0.6px;
-}
 
-.h2-title--before {
-    position: relative;
+    &--before {
+        position: relative;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -16px;
-        width: 4px;
-        height: 40px;
-        background-color: #41F6D7;
-        border-bottom-right-radius: 5px;
-        border-top-right-radius: 5px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -16px;
+            width: 4px;
+            height: 40px;
+            background-color: #41F6D7;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+
+    &--margin {
+        margin: 0 0 24px 0;
+
+        &::before {
+            left: -32px; 
+        }
     }
 }
 

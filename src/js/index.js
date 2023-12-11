@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             },
             autoplay: {
-                delay: 3000
+                delay: 4000
             }
         }
     )
@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             },
             autoplay: {
-                delay: 3000
+                delay: 4000
             }
         }
     )
@@ -115,20 +115,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             },
             autoplay: {
-                delay: 3000
+                delay: 4000
             }
         }
     )
 })
 
 // info block read btn
-const infoContent = document.querySelector('.info__text-wrapper')
-const text = infoContent.querySelector('.info__text')
-const readBtn = infoContent.querySelector('.btn--more')
+const infoWrapper = document.querySelector('.info__text-wrapper')
+const infoText = infoWrapper.querySelector('.info__text')
+const readBtn = infoWrapper.querySelector('.btn--more')
 
 readBtn.addEventListener('click', function () {
     this.classList.toggle('btn--more--active')
-    text.classList.toggle('info__text--visible')
+    infoText.classList.toggle('info__text--visible')
     this.textContent =
         this.textContent === 'Читать далее' ? 'Скрыть' : 'Читать далее'
 })
@@ -165,18 +165,26 @@ const mainBlock = document.querySelector('main')
 const body = document.querySelector('body')
 const headerBlock = document.querySelector('.header')
 
-menuOpenBtn.addEventListener('click', function () {
-    sidebarMenu.classList.add('sidebar--active')
+const classesAddLocked = function () {
     mainBlock.classList.add('locked')
     headerBlock.classList.add('locked')
     body.classList.add('no-scroll')
+}
+
+const classesRemoveLocked = function () {
+    mainBlock.classList.remove('locked')
+    headerBlock.classList.remove('locked')
+    body.classList.remove('no-scroll')
+}
+
+menuOpenBtn.addEventListener('click', function () {
+    sidebarMenu.classList.add('sidebar--active')
+    classesAddLocked()
 })
 
 const closeSidebarMenu = function () {
     sidebarMenu.classList.remove('sidebar--active')
-    mainBlock.classList.remove('locked')
-    headerBlock.classList.remove('locked')
-    body.classList.remove('no-scroll')
+    classesRemoveLocked()
 }
 
 menuCloseBtn.addEventListener('click', function () {
@@ -204,19 +212,15 @@ feedbackOpenBtns.forEach(function (feedbackOpenBtn) {
             closeSidebarMenu()
         }
         feedbackBlock.classList.add('feedback--visible')
-        mainBlock.classList.add('locked')
-        headerBlock.classList.add('locked')
         sidebarMenu.classList.add('locked')
-        body.classList.add('no-scroll')
+        classesAddLocked()
     })
 })
 
 const closeFeedbackBlock = function () {
     feedbackBlock.classList.remove('feedback--visible')
-    mainBlock.classList.remove('locked')
-    headerBlock.classList.remove('locked')
     sidebarMenu.classList.remove('locked')
-    body.classList.remove('no-scroll')
+    classesRemoveLocked()
 }
 
 feedbackCloseBtn.addEventListener('click', function () {
@@ -234,29 +238,25 @@ document.addEventListener('click', (e) => {
 }, {capture: true})
 
 // modal call block 
-const modalcallBlock = document.querySelector('.modal-call')
+const modalcallBlock = document.querySelector('.call')
 const modalcallOpenBtns = document.querySelectorAll('.btn-modal-call')
-const modalcallCloseBtn = document.querySelector('.modal-call__close-btn')
+const modalcallCloseBtn = document.querySelector('.call__close-btn')
 
 modalcallOpenBtns.forEach(function (modalcallOpenBtn) {
     modalcallOpenBtn.addEventListener('click', function () {
         if (sidebarMenu.classList.contains('sidebar--active')) {
             closeSidebarMenu()
         }
-        modalcallBlock.classList.add('modal-call--visible')
-        mainBlock.classList.add('locked')
-        headerBlock.classList.add('locked')
+        modalcallBlock.classList.add('call--visible')
         sidebarMenu.classList.add('locked')
-        body.classList.add('no-scroll')
+        classesAddLocked()
     })
 })
 
 const closeModalcallBlock = function () {
-    modalcallBlock.classList.remove('modal-call--visible')
-    mainBlock.classList.remove('locked')
-    headerBlock.classList.remove('locked')
+    modalcallBlock.classList.remove('call--visible')
     sidebarMenu.classList.remove('locked')
-    body.classList.remove('no-scroll')
+    classesRemoveLocked()
 }
 
 modalcallCloseBtn.addEventListener('click', function () {
@@ -264,7 +264,7 @@ modalcallCloseBtn.addEventListener('click', function () {
 })
 
 document.addEventListener('click', (e) => {
-    if (modalcallBlock.classList.contains('modal-call--visible')) {
+    if (modalcallBlock.classList.contains('call--visible')) {
         const clickModalcallBlock = e.composedPath().includes(modalcallBlock)
 
         if (!clickModalcallBlock) {
