@@ -433,9 +433,6 @@ main {
   margin-bottom: 12px; }
   .sidebar__mail:hover {
     text-decoration: underline; }
-  .sidebar__mail:focus {
-    outline: 1px solid #797a7d;
-    border-radius: 6px; }
 
 .sidebar__tel {
   display: block;
@@ -443,10 +440,10 @@ main {
   font-family: 'TTLakes Bold';
   font-size: 24px;
   line-height: 133.33%;
-  letter-spacing: -0.6px; }
-  .sidebar__tel:focus {
-    outline: 1px solid #797a7d;
-    border-radius: 6px; }
+  letter-spacing: -0.6px;
+  transition: color 0.2s ease-in; }
+  .sidebar__tel:hover {
+    color: #797a7d; }
 
 .brands__container {
   padding: 16px; }
