@@ -615,7 +615,8 @@ main {
   .feedback .h2-title--before::before {
     left: -32px; }
 
-.feedback__close-btn {
+.feedback__close-btn,
+.modal-call__close-btn {
   position: absolute;
   left: -72px; }
 
@@ -656,6 +657,26 @@ main {
 
 .feedback__link {
   color: #FF3E79; }
+
+.modal-call {
+  max-width: 440px;
+  padding: 40px 32px;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(512px);
+  transition: transform 0.2s linear;
+  height: 100vh;
+  border-left: 1px solid #d9fff5;
+  z-index: 11; }
+  .modal-call--visible {
+    transform: translateX(0); }
+  .modal-call .h2-title {
+    margin: 0 0 24px 0; }
+  .modal-call .h2-title--before::before {
+    left: -32px; }
 
 .footer {
   background-color: #F8F8F8;
@@ -839,13 +860,17 @@ main {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 630px) {
-  .feedback {
+  .feedback,
+  .modal-call {
     padding: 24px 16px; }
-    .feedback .h2-title {
+    .feedback .h2-title,
+    .modal-call .h2-title {
       margin: 40px 0 24px 0; }
-    .feedback .h2-title--before::before {
+    .feedback .h2-title--before::before,
+    .modal-call .h2-title--before::before {
       left: -16px; }
-  .feedback__close-btn {
+  .feedback__close-btn,
+  .modal-call__close-btn {
     position: static; } }
 
 
