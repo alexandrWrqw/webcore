@@ -253,3 +253,24 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media screen and (max-width: 630px) {
+    .feedback {
+        padding: 24px 16px;
+
+        .h2-title {
+            margin: 40px 0 24px 0;
+        }
+
+        .h2-title--before {
+
+            &::before {
+                left: -16px;
+            }
+        }
+    }
+
+    .feedback__close-btn {
+        position: static;
+    }
+}

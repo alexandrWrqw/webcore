@@ -192,3 +192,43 @@ document.addEventListener('click', (e) => {
         }
     }
 }, {capture: true})
+
+// feedback block 
+const feedbackBlock = document.querySelector('.feedback')
+const feedbackOpenBtns = document.querySelectorAll('.btn-feedback')
+const feedbackCloseBtn = document.querySelector('.feedback__close-btn')
+
+feedbackOpenBtns.forEach(function (feedbackOpenBtn) {
+    feedbackOpenBtn.addEventListener('click', function () {
+        if (sidebarMenu.classList.contains('sidebar--active')) {
+            closeSidebarMenu()
+        }
+        feedbackBlock.classList.add('feedback--visible')
+        mainBlock.classList.add('locked')
+        headerBlock.classList.add('locked')
+        sidebarMenu.classList.add('locked')
+        body.classList.add('no-scroll')
+    })
+})
+
+const closeFeedbackBlock = function () {
+    feedbackBlock.classList.remove('feedback--visible')
+    mainBlock.classList.remove('locked')
+    headerBlock.classList.remove('locked')
+    sidebarMenu.classList.remove('locked')
+    body.classList.remove('no-scroll')
+}
+
+feedbackCloseBtn.addEventListener('click', function () {
+    closeFeedbackBlock()
+})
+
+document.addEventListener('click', (e) => {
+    if (feedbackBlock.classList.contains('feedback--visible')) {
+        const clickFeedbackBlock = e.composedPath().includes(feedbackBlock)
+
+        if (!clickFeedbackBlock) {
+            closeFeedbackBlock()
+        }
+    }
+}, {capture: true})

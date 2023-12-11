@@ -233,6 +233,30 @@ main {
     }
 }
 
+.h2-title {
+    color: $textDark;
+    font-family: $bold;
+    font-size: 28px;
+    line-height: 142%;
+    letter-spacing: -0.6px;
+}
+
+.h2-title--before {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -16px;
+        width: 4px;
+        height: 40px;
+        background-color: #41F6D7;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}
+
 .title-block {
     color: $textLight;
     font-family: $regular;
