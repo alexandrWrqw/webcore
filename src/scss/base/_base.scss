@@ -113,11 +113,6 @@ main {
                 height: 10px;
             }
         }
-
-        &:focus {
-            outline: 2px solid $btn;
-            outline-offset: 2px;
-        }
     }
 
     &--arrow {
@@ -138,11 +133,6 @@ main {
             border-radius: 2px;
             transition: width 0.1s ease-in,
                 height 0.1s ease-in;
-        }
-
-        &:focus {
-            outline: 2px solid $btn;
-            outline-offset: 1px;
         }
     }
 
@@ -239,11 +229,6 @@ main {
 
         &:hover {
             color: $textLight;
-        }
-
-        &:focus {
-            outline: 1px solid $darkHover;
-            border-radius: 6px;
         }
     }
 }

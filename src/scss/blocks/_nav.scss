@@ -61,9 +61,4 @@
             transform: translateX(0) translateY(-50%) rotate(45deg);
         }
     }
-
-    &:focus {
-        outline: 1px solid $darkHover;
-        border-radius: 6px;
-    }
 }

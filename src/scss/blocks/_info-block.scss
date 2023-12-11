@@ -93,11 +93,6 @@
         color: $lightHover;
     }
 
-    &:focus {
-        outline: 1px solid $textLight;
-        outline-offset: -1px;
-    }
-
     &--active {
         background-color: #fff;
         border: 2px solid #B8FFEC;

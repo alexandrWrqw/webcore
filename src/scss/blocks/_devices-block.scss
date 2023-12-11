@@ -39,3 +39,45 @@
     margin-right: 16px;
     margin-bottom: 16px;
 }
+
+.prices__footer {
+    padding: 32px;
+}
+
+.prices__offer-text {
+    max-width: 420px;
+    color: $textDark;
+    font-family: $regular;
+    font-size: 14px;
+    line-height: 142%;
+    letter-spacing: 0.2px;
+}
+
+.prices__offer-btn {
+    color: $textDark;
+    font-family: $medium;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+    transition: color 0.2s ease-in;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        border-right: 3px solid $btn;
+        border-top: 3px solid $btn;
+        width: 9px;
+        height: 9px;
+        transform: rotate(45deg);
+        border-radius: 2px;
+        margin-left: 5px;
+        transition: margin-left 0.2s ease-in;
+    }
+
+    &:hover {
+        color: $darkHover;
+
+        &::after {
+            margin-left: 10px;
+        }
+    }
+}

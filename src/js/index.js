@@ -172,9 +172,23 @@ menuOpenBtn.addEventListener('click', function () {
     body.classList.add('no-scroll')
 })
 
-menuCloseBtn.addEventListener('click', function () {
+const closeSidebarMenu = function () {
     sidebarMenu.classList.remove('sidebar--active')
     mainBlock.classList.remove('locked')
     headerBlock.classList.remove('locked')
     body.classList.remove('no-scroll')
+}
+
+menuCloseBtn.addEventListener('click', function () {
+    closeSidebarMenu()
 })
+
+document.addEventListener('click', (e) => {
+    if (sidebarMenu.classList.contains('sidebar--active')) {
+        const clickSidebarBlock = e.composedPath().includes(sidebarMenu)
+
+        if (!clickSidebarBlock) {
+            closeSidebarMenu()
+        }
+    }
+}, {capture: true})

@@ -173,6 +173,20 @@
     .info__img {
         max-width: 480px;
     }
+
+    .footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer__info {
+        flex: unset;
+        text-align: center;
+
+        &:last-child {
+            text-align: center;
+        }
+    }
 }
 
 // desktop 1120
@@ -211,6 +225,14 @@
 
     .info__buttons[hidden] {
         display: none;
+    }
+
+    .prices__footer {
+        padding: 16px;
+    }
+
+    .footer {
+        padding: 16px 16px 12px 16px;
     }
 }
 
