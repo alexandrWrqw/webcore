@@ -232,3 +232,43 @@ document.addEventListener('click', (e) => {
         }
     }
 }, {capture: true})
+
+// modal call block 
+const modalcallBlock = document.querySelector('.modal-call')
+const modalcallOpenBtns = document.querySelectorAll('.btn-modal-call')
+const modalcallCloseBtn = document.querySelector('.modal-call__close-btn')
+
+modalcallOpenBtns.forEach(function (modalcallOpenBtn) {
+    modalcallOpenBtn.addEventListener('click', function () {
+        if (sidebarMenu.classList.contains('sidebar--active')) {
+            closeSidebarMenu()
+        }
+        modalcallBlock.classList.add('modal-call--visible')
+        mainBlock.classList.add('locked')
+        headerBlock.classList.add('locked')
+        sidebarMenu.classList.add('locked')
+        body.classList.add('no-scroll')
+    })
+})
+
+const closeModalcallBlock = function () {
+    modalcallBlock.classList.remove('modal-call--visible')
+    mainBlock.classList.remove('locked')
+    headerBlock.classList.remove('locked')
+    sidebarMenu.classList.remove('locked')
+    body.classList.remove('no-scroll')
+}
+
+modalcallCloseBtn.addEventListener('click', function () {
+    closeModalcallBlock()
+})
+
+document.addEventListener('click', (e) => {
+    if (modalcallBlock.classList.contains('modal-call--visible')) {
+        const clickModalcallBlock = e.composedPath().includes(modalcallBlock)
+
+        if (!clickModalcallBlock) {
+            closeModalcallBlock()
+        }
+    }
+}, {capture: true})

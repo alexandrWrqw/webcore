@@ -255,7 +255,8 @@
 }
 
 @media screen and (max-width: 630px) {
-    .feedback {
+    .feedback,
+    .modal-call {
         padding: 24px 16px;
 
         .h2-title {
@@ -270,7 +271,8 @@
         }
     }
 
-    .feedback__close-btn {
+    .feedback__close-btn,
+    .modal-call__close-btn {
         position: static;
     }
 }
