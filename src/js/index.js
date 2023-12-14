@@ -162,17 +162,20 @@ const sidebarMenu = document.querySelector('.sidebar')
 const menuOpenBtn = document.querySelector('.header__menu-btn')
 const menuCloseBtn = document.querySelector('.sidebar__close-btn')
 const mainBlock = document.querySelector('main')
+const footerBlock = document.querySelector('.footer')
 const body = document.querySelector('body')
 const headerBlock = document.querySelector('.header')
 
 const classesAddLocked = function () {
     mainBlock.classList.add('locked')
+    footerBlock.classList.add('locked')
     headerBlock.classList.add('locked')
     body.classList.add('no-scroll')
 }
 
 const classesRemoveLocked = function () {
     mainBlock.classList.remove('locked')
+    footerBlock.classList.remove('locked')
     headerBlock.classList.remove('locked')
     body.classList.remove('no-scroll')
 }
@@ -203,6 +206,7 @@ document.addEventListener('click', (e) => {
 
 // feedback block 
 const feedbackBlock = document.querySelector('.feedback')
+const feedbackBlockInput = feedbackBlock.querySelector('input')
 const feedbackOpenBtns = document.querySelectorAll('.btn-feedback')
 const feedbackCloseBtn = document.querySelector('.feedback__close-btn')
 
@@ -214,6 +218,7 @@ feedbackOpenBtns.forEach(function (feedbackOpenBtn) {
         feedbackBlock.classList.add('feedback--visible')
         sidebarMenu.classList.add('locked')
         classesAddLocked()
+        feedbackBlockInput.focus()
     })
 })
 
@@ -221,6 +226,7 @@ const closeFeedbackBlock = function () {
     feedbackBlock.classList.remove('feedback--visible')
     sidebarMenu.classList.remove('locked')
     classesRemoveLocked()
+    feedbackBlockInput.blur()
 }
 
 feedbackCloseBtn.addEventListener('click', function () {
@@ -239,6 +245,7 @@ document.addEventListener('click', (e) => {
 
 // modal call block 
 const modalcallBlock = document.querySelector('.call')
+const modalcallBlockInput = modalcallBlock.querySelector('input')
 const modalcallOpenBtns = document.querySelectorAll('.btn-modal-call')
 const modalcallCloseBtn = document.querySelector('.call__close-btn')
 
@@ -250,6 +257,7 @@ modalcallOpenBtns.forEach(function (modalcallOpenBtn) {
         modalcallBlock.classList.add('call--visible')
         sidebarMenu.classList.add('locked')
         classesAddLocked()
+        modalcallBlockInput.focus()
     })
 })
 
@@ -257,6 +265,7 @@ const closeModalcallBlock = function () {
     modalcallBlock.classList.remove('call--visible')
     sidebarMenu.classList.remove('locked')
     classesRemoveLocked()
+    modalcallBlockInput.blur()
 }
 
 modalcallCloseBtn.addEventListener('click', function () {
@@ -272,3 +281,11 @@ document.addEventListener('click', (e) => {
         }
     }
 }, {capture: true})
+
+document.onkeydown = function (e) {
+    if (e.keyCode == 27) {
+        closeFeedbackBlock()
+        closeSidebarMenu()
+        closeModalcallBlock()
+    }
+}
