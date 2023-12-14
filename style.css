@@ -394,8 +394,9 @@ main {
   width: 320px;
   padding: 18px 24px;
   background-color: white;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   position: fixed;
-  transform: translateX(-320px);
+  transform: translateX(-420px);
   transition: transform 0.2s linear, opacity 0.2s linear;
   height: 100vh;
   z-index: 10;
@@ -404,9 +405,6 @@ main {
   overflow-y: scroll; }
   .sidebar::-webkit-scrollbar {
     width: 0; }
-  .sidebar--active {
-    transform: translateX(0);
-    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02); }
 
 .sidebar__header {
   display: flex;
@@ -613,14 +611,10 @@ main {
   height: 100vh;
   border-left: 1px solid #d9fff5;
   z-index: 11; }
-  .feedback--visible,
-  .call--visible {
-    transform: translateX(0); }
-
-.feedback__close-btn,
-.call__close-btn {
-  position: absolute;
-  left: -72px; }
+  .feedback .btn--close,
+  .call .btn--close {
+    position: absolute;
+    left: -72px; }
 
 .form {
   display: flex;
@@ -667,6 +661,9 @@ main {
   .form__link:hover {
     text-decoration: underline; }
 
+.modal-visible {
+  transform: translateX(0); }
+
 .footer {
   background-color: #F8F8F8;
   padding: 32px 32px 24px 32px;
@@ -695,7 +692,7 @@ main {
     width: 12px;
     height: 12px;
     background-color: #B5B6BC; }
-  .btn-show {
+  .btn--more {
     display: none; }
   .slider-brands {
     position: relative;
@@ -809,9 +806,10 @@ main {
     padding-left: 320px; }
   .sidebar {
     display: flex;
-    box-shadow: unset; }
-  .sidebar__close-btn {
-    display: none; }
+    box-shadow: unset;
+    transform: translateX(-320px); }
+    .sidebar .btn--close {
+      display: none; }
   .sidebar__logo--margin-left {
     margin-left: 0; }
   .info__slider {
@@ -850,9 +848,9 @@ main {
     .feedback .main-title--before::before,
     .call .main-title--before::before {
       left: -16px; }
-  .feedback__close-btn,
-  .call__close-btn {
-    position: static; } }
+    .feedback .btn--close,
+    .call .btn--close {
+      position: static; } }
 
 
 /*# sourceMappingURL=style.css.map*/
