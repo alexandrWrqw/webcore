@@ -45,6 +45,10 @@ main {
 .no-scroll {
   overflow-y: hidden; }
 
+.visible-block {
+  max-height: none !important;
+  overflow-y: visible; }
+
 .title-reset,
 .par-reset {
   margin: 0;
