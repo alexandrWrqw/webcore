@@ -121,40 +121,19 @@ window.addEventListener('DOMContentLoaded', () => {
     )
 })
 
-// info block read btn
-const infoWrapper = document.querySelector('.info__text-wrapper')
-const infoText = infoWrapper.querySelector('.info__text')
-const readBtn = infoWrapper.querySelector('.btn--more')
+// show more buttons
+const showContentButtons = document.querySelectorAll('.btn--more')
 
-readBtn.addEventListener('click', function () {
-    this.classList.toggle('btn--more--active')
-    infoText.classList.toggle('info__text--visible')
-    this.textContent =
-        this.textContent === 'Читать далее' ? 'Скрыть' : 'Читать далее'
-})
+showContentButtons.forEach(function (showContentButton) {
+    let showContentButtonText = showContentButton.textContent
 
-// brands block show btn
-const brandsContainer = document.querySelector('.brands__container')
-const brandsList = brandsContainer.querySelector('.brands__list')
-const brandsShowBtn = brandsContainer.querySelector('.btn-show')
-
-brandsShowBtn.addEventListener('click', function () {
-    this.classList.toggle('btn--more--active')
-    brandsList.classList.toggle('brands__list--visible')
-    this.textContent =
-        this.textContent === 'Показать все' ? 'Скрыть' : 'Показать все'
-})
-
-// devices block show btn
-const devicesContainer = document.querySelector('.devices__container')
-const devicesList = devicesContainer.querySelector('.devices__list')
-const devicesShowBtn = devicesContainer.querySelector('.btn-show')
-
-devicesShowBtn.addEventListener('click', function () {
-    this.classList.toggle('btn--more--active')
-    devicesList.classList.toggle('devices__list--visible')
-    this.textContent =
-        this.textContent === 'Показать все' ? 'Скрыть' : 'Показать все'
+    showContentButton.addEventListener('click', function () {
+        const content = this.previousElementSibling
+        content.classList.toggle('visible-block')
+        this.classList.toggle('btn--more--active')
+        this.textContent = 
+            this.textContent === showContentButtonText ? 'Скрыть' : showContentButtonText
+    })
 })
 
 // menu burger btn 

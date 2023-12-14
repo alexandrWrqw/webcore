@@ -61,6 +61,11 @@ main {
     overflow-y: hidden;
 }
 
+.visible-block {
+    max-height: none !important;
+    overflow-y: visible;
+}
+
 // resets 
 .title-reset,
 .par-reset {
