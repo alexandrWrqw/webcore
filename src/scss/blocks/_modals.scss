@@ -14,15 +14,10 @@
     border-left: 1px solid #d9fff5;
     z-index: 11;
 
-    &--visible {
-        transform: translateX(0);
+    .btn--close {
+        position: absolute;
+        left: -72px;
     }
-}
-
-.feedback__close-btn, 
-.call__close-btn {
-    position: absolute;
-    left: -72px;
 }
 
 .form {
@@ -72,4 +67,8 @@
     &:hover {
         text-decoration: underline;
     }
+}
+
+.modal-visible {
+    transform: translateX(0);
 }

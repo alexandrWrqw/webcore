@@ -14,7 +14,7 @@
         background-color: #B5B6BC;
     }
 
-    .btn-show {
+    .btn--more {
         display: none;
     }
 
@@ -197,10 +197,11 @@
     .sidebar {
         display: flex;
         box-shadow: unset;
-    }
-    
-    .sidebar__close-btn {
-        display: none;
+        transform: translateX(-320px);
+
+        .btn--close {
+            display: none;
+        }
     }
 
     .sidebar__logo--margin-left {
@@ -273,10 +274,9 @@
                 left: -16px;
             }
         }
-    }
 
-    .feedback__close-btn,
-    .call__close-btn {
-        position: static;
+        .btn--close {
+            position: static;
+        }
     }
 }
