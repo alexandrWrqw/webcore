@@ -164,17 +164,20 @@ closeModalWindowBtns.forEach(function (closeModalWindowBtn) {
 })
 
 document.onkeydown = function (e) {
-    if (e.keyCode == 27) {
-        const visibleBlock = document.querySelector('.modal-visible')
-
-        if (visibleBlock.classList.contains('feedback') || visibleBlock.classList.contains('call')) {
-            const visibleBlockFocusInput = visibleBlock.querySelector('input')
-            visibleBlockFocusInput.blur()
+    const visibleBlock = document.querySelector('.modal-visible')
+    if (visibleBlock) {
+        if (e.keyCode == 27) {
+            const visibleBlock = document.querySelector('.modal-visible')
+    
+            if (visibleBlock.classList.contains('feedback') || visibleBlock.classList.contains('call')) {
+                const visibleBlockFocusInput = visibleBlock.querySelector('input')
+                visibleBlockFocusInput.blur()
+            }
+            
+            visibleBlock.classList.remove('modal-visible')
+            sidebarMenu.classList.remove('locked')
+            classesToggleLocked()
         }
-        
-        visibleBlock.classList.remove('modal-visible')
-        sidebarMenu.classList.remove('locked')
-        classesToggleLocked()
     }
 }
 
